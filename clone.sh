@@ -14,6 +14,6 @@ then
   exit 1
 fi
 
-git clone https://github.com/SUPLA/supla-espressif-esp
+git clone https://github.com/krissgpl/supla-espressif-esp
 
 exit 0

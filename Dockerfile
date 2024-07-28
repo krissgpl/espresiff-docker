@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 RUN apt-get update 
-RUN apt-get -y install git vim wget build-essential python python-pip
+RUN apt-get -y install git vim wget build-essential python python-pip mc
 RUN pip install esptool
 RUN mkdir /hdd2
 RUN if uname -m | grep x86_64; then \
