@@ -1,7 +1,9 @@
 FROM debian:bullseye
 
 RUN apt-get update 
-RUN apt-get -y install git vim wget build-essential python python-pip mc dialog
+RUN apt-get -y install git vim wget build-essential python mc dialog
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+RUN python get-pip.py
 RUN pip install esptool
 RUN mkdir /hdd2
 RUN if uname -m | grep x86_64; then \
