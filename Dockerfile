@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 RUN apt-get update 
 RUN apt-get -y install git vim wget build-essential python python-pip mc dialog
