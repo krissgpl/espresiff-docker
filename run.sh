@@ -13,7 +13,7 @@ cd $PROJ
 #	docker rm devel-esp8266
 #fi
 
-if docker inspect "devel-8266" > /dev/null 2>&1; then
+if docker inspect "/devel-esp8266" > /dev/null 2>&1; then
     echo "The container devel-8266 exists."
 fi
 
