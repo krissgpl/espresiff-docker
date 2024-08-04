@@ -13,9 +13,10 @@ cd $PROJ
 #	docker rm devel-esp8266
 #fi
 
-if [ ! "$(docker ps -a -q -f name=/devel-esp8266)" ]; then
-    if [ "$(docker ps -aq -f status=exited -f name=/devel-esp8266)" ]; then
+if [ ! "$(docker ps -a -q -f name=devel/esp8266)" ]; then
+    if [ "$(docker ps -aq -f status=exited -f name=devel/esp8266)" ]; then
         # cleanup
+		echo "Running - devel-esp8266!"
         docker rm devel-esp8266
     fi
 fi
