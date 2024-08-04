@@ -13,6 +13,9 @@ cd $PROJ
 #	docker rm devel-esp8266
 #fi
 
+if docker inspect "devel-8266" > /dev/null 2>&1; then
+    echo "The container devel-8266 exists."
+
 if [ ! "$(docker ps -a -q -f name=devel/esp8266)" ]; then
     if [ "$(docker ps -aq -f status=exited -f name=devel/esp8266)" ]; then
         # cleanup
