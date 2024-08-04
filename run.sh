@@ -2,7 +2,7 @@
 
 PROJ=~/CProjects
 ROOT=~/CProjects/root
-FIRM=~/CProjects/esp_firmware
+FIRM=/media/QNAP/ESP_Firmware
 [ -e $PROJ ] || mkdir -p $PROJ
 cd $PROJ
 [ ! -e ./supla-espressif-esp ] && git clone https://github.com/krissgpl/supla-espressif-esp
@@ -11,4 +11,4 @@ then
     echo "Running - devel-esp8266!"
 	docker rm devel-esp8266
 fi
-docker run --name devel-esp8266 -v "$PROJ":/CProjects -v "$ROOT":/root "$FIRM":/esp_firmware -it devel/esp8266 /bin/bash
+docker run --name devel-esp8266 -v "$PROJ":/CProjects -v "$ROOT":/root -v "$FIRM":/ESP_Firmware -it devel/esp8266 /bin/bash
