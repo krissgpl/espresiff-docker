@@ -1,7 +1,7 @@
 FROM debian:bullseye
 
 RUN apt-get update 
-RUN apt-get -y install git vim wget build-essential python mc dialog
+RUN apt-get -y install git nano wget build-essential python mc dialog
 RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 RUN python get-pip.py
 RUN pip install esptool
@@ -25,5 +25,6 @@ RUN if uname -m | grep x86_64; then \
 
 COPY clone.sh /usr/sbin/
 RUN chmod +x /usr/sbin/clone.sh
+RUN git config --global --add safe.directory /CProjects/supla-espressif-esp
 
 WORKDIR /CProjects/supla-espressif-esp/src
